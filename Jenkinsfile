@@ -1,6 +1,10 @@
 
 pipeline {
     agent any
+    environment {
+            MAVEN_HOME = "C:\\Program Files\\Maven\\apache-maven-3.9.9"  // Adjust path if different
+            PATH = "${MAVEN_HOME}\\bin;${env.PATH}"
+        }
 
     stages {
         stage('Checkout') {
